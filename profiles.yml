@@ -10,4 +10,29 @@ dbt_demo:
       type: snowflake
       user: dbt
       warehouse: COMPUTE_WH
+    prod:
+      account: rrmzzps-vt73363
+      database: RAW
+      password: "dbtPassword123"
+      role: TRANSFORM
+      schema: AIRBNB
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
   target: dev
+
+  dbt_demo123:
+  outputs:
+    dev:
+      account: rrmzzps-vt73363
+      database: RAW
+      password: "dbtPassword123"
+      role: TRANSFORM
+      schema: AIRBNB
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
+
