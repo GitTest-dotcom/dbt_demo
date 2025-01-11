@@ -1,7 +1,9 @@
 
 {{
   config(
-    materialized= 'incremental'
+    materialized = 'incremental',
+    unique_key = ['listing_id','reviewer_name'],
+    merge_update_columns = ['review_text']
   )  
 }}
 SELECT * FROM {{ ref('src_reviews') }}
