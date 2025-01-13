@@ -9,6 +9,7 @@ profile: 'dbt_demo'
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
 
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
@@ -22,4 +23,10 @@ models:
     Integration:
       +database: int
       +schema: airbnb
+      +materialized: table
+
+seeds:
+   dbt_demo:
+     +database: int
+     +schema: airbnb      
       
